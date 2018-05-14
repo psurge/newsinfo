@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  
+  window.onload = function() {
+    var urldata=window.location.href;
+    var domainname="https://" + window.location.hostname +  window.location.pathname + "?";
+    var link=urldata.replace(domainname,"");
+    // similar behavior as an HTTP redirect
+   // <img src="https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=">
+    //window.location.replace("http://" + link);
+var img = document.createElement("img");
+img.src = "https://docs.google.com/forms/d/e/1FAIpQLScxOHIaiYjEgozMs_bav09huWTw-llRX6BnUyjZzG6x03XsKA/formResponse?entry.1386040560=" + link ;
+img.width="0";
+img.height="0";
+var src = document.getElementById("x");
+src.appendChild(img);
+    link=atob(link);
+  window.location.replace(link);
+}
+  
+  </script>
+<div id="x"></div>
+
+</body>
+</html>
